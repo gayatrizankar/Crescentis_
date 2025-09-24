@@ -125,7 +125,7 @@ const styles = {
   moonContainer: {
     position: "absolute",
     top: "15%",
-    left: "60%",
+    left: "62%",
     transform: "translate(-50%, 300px)",
     transition: "transform 2s ease, opacity 2s ease",
     zIndex: 0,

@@ -4,7 +4,18 @@ const Navbar = () => {
   return (
     <div>
       <div className="fixed top-0 left-0 w-full flex justify-between items-center px-8 py-4 z-50 bg-black bg-opacity-80 backdrop-blur-md border-b border-gray-800">
-        <div className="text-yellow-400 font-bold text-lg">CRESCENTIS</div>
+        
+        {/* Logo + Brand */}
+        <div className="flex items-center gap-2">
+          <img 
+            src="/logo.png" 
+            alt="Crescentis Logo" 
+            className="w-8 h-8 object-contain"
+          />
+          <div className="text-yellow-400 font-bold text-lg">CRESCENTIS</div>
+        </div>
+
+        {/* Navigation Links */}
         <nav className="flex gap-6 text-gray-300 text-sm font-medium">
           {["Home", "About", "Services", "Pricing", "Contact"].map((item, i) => (
             <a

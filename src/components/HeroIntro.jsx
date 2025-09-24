@@ -14,14 +14,14 @@ export default function HeroIntro() {
   initial={{ opacity: 0, y: 50 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.5, duration: 1 }}
-  className="text-6xl md:text-8xl font-bold tracking-wide relative"
+  className="text-[4.625rem] lg:text-[7.25rem] leading-none font-[410] font-dm-sans opacity-70 tracking-tight relative"
   style={{
     background: "linear-gradient(90deg, #bca41aff, #e0d027ff, #d1cc9dff, #FFD700, #FFB800)", // more golden gradient
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
   }}
 >
-  CRESCENTIS
+  Crescentis
   <motion.span
     initial={{ scaleX: 0 }}
     animate={{ scaleX: 1 }}
@@ -38,17 +38,16 @@ export default function HeroIntro() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
-          className="mt-4 text-base md:text-lg text-gray-300 max-w-lg"
+          className="mt-4 text-base md:text-lg text-gray-300 max-w-lg text-white text-base lg:text-lg text-center max-w-[67ch] lg:max-w-[75ch]  font-dm-sans"
         >
-          We help brands shine brighter through strategy, design, and technology.  
-          Turning visions into stories and stories into impact.
+          Crescentis Marketing Co. is a full-stack digital agency helping bold brands scale with strategic marketing, design, and digital solutions. Powered by ambition, driven by results.
         </motion.p>
 
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.1, duration: 0.8 }}
-          className="mt-8 px-10 py-3 bg-yellow-400 text-black font-bold rounded-xl shadow-lg hover:bg-yellow-300 transition"
+          className="mt-8 px-10 py-3 bg-yellow-400 text-black text-xl rounded-xl shadow-lg hover:bg-yellow-300 transition font-dm-sans"
         >
           Get Started
         </motion.button>

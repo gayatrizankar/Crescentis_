@@ -1,91 +1,55 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-const fullForm = [
-  { letter: "C", word: "Creative" },
-  { letter: "R", word: "Results-Driven" },
-  { letter: "E", word: "Engagement" },
-  { letter: "S", word: "Strategy" },
-  { letter: "C", word: "Campaigns" },
-  { letter: "E", word: "Empowering" },
-  { letter: "N", word: "Next-Gen Tech" },
-  { letter: "T", word: "Transformation" },
-  { letter: "I", word: "Innovation" },
-  { letter: "S", word: "Success" },
-];
-
 const Footer = () => {
-  const [displayed, setDisplayed] = useState([]);
-  const [finalReveal, setFinalReveal] = useState(false);
-
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.4 });
 
   useEffect(() => {
-    if (inView) {
-      let index = -1;
-      const interval = setInterval(() => {
-        if (index < fullForm.length) {
-          setDisplayed((prev) => [...prev, fullForm[index]]);
-          index++;
-        } else {
-          clearInterval(interval);
-          // Final reveal delay after animation
-          setTimeout(() => {
-            setFinalReveal(true);
-          }, 1000);
-        }
-      }, 500);
-
-      // Inject animation keyframes only once
-      const style = document.createElement("style");
-      style.innerHTML = `
-        @keyframes popIn {
-          0% { transform: scale(0.5); opacity: 0; }
-          60% { transform: scale(1.2); opacity: 1; }
-          100% { transform: scale(1); }
-        }
-
-        @keyframes glowPulse {
-          0% { box-shadow: 0 0 10px #ffd70055, 0 0 30px #ffd70022; }
-          50% { box-shadow: 0 0 25px #ffd700aa, 0 0 60px #ffd70033; }
-          100% { box-shadow: 0 0 10px #ffd70055, 0 0 30px #ffd70022; }
-        }
-      `;
-      document.head.appendChild(style);
-
-      return () => clearInterval(interval);
-    }
-  }, [inView]);
+    // Inject animation keyframes once
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes slide {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+      }
+    `;
+    document.head.appendChild(style);
+  }, []);
 
   return (
     <footer ref={ref} style={styles.footer}>
-      {/* Galaxy-style animation container */}
-      <div style={styles.galaxyContainer}>
-        {displayed.map((item, idx) => (
-  item && (
-    <div key={`${item.letter}-${idx}`} style={{ ...styles.planet, animation: "popIn 0.5s ease" }}>
-      <div style={styles.letter}>{item.letter}</div>
-      <div style={styles.word}>{item.word}</div>
-    </div>
-  )
-))}
-
+      {/* Our Client Portfolio Section */}
+      <div style={styles.portfolioSection}>
+        <h2  style={styles.portfolioTitle} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans">Our Client Portfolio</h2>
+        <p style={styles.portfolioSubtitle}>
+          Showcasing some of the brands we’ve proudly worked with
+        </p>
       </div>
 
-      {/* Final full-form reveal */}
-      {finalReveal && (
-        <div style={styles.finalReveal}>
-          <h2 style={styles.fullName}>CRESCENTIS</h2>
-          <p style={styles.fullMeaning}>
-            Creative | Results-Driven | Engagement | Strategy | Campaigns | Empowering | Next-Gen Tech | Transformation | Innovation | Success
-          </p>
-        </div>
-      )}
+      {/* Infinite moving card animation */}
+      <div style={styles.cardContainer}>
+        <div style={styles.cardTrack}>
+          <div style={styles.card}><img src="/mirage.png" alt="" /></div>
+          <div style={styles.card}><img src="/masco.png" alt="" /></div>
+          <div style={styles.card}><img src="/juju.png" alt="" /></div>
+          <div style={styles.card}><img src="/gather.png" alt="" /></div>
+          <div style={styles.card}><img src="/recucina.png" alt="" /></div>
+          <div style={styles.card}><img src="/kefi.png" alt="" /></div>
 
-      {/* Arc */}
+          {/* Duplicate for infinite loop */}
+          <div style={styles.card}><img src="/mirage.png" alt="" /></div>
+          <div style={styles.card}><img src="/masco.png" alt="" /></div>
+          <div style={styles.card}><img src="/juju.png" alt="" /></div>
+          <div style={styles.card}><img src="/gather.png" alt="" /></div>
+          <div style={styles.card}><img src="/recucina.png" alt="" /></div>
+          <div style={styles.card}><img src="/kefi.png" alt="" /></div>
+        </div>
+      </div>
+
+      {/* Arc effect */}
       <div style={styles.footerArc}></div>
 
-      {/* Footer content */}
+      {/* Footer bottom content */}
       <div style={styles.footerBottom}>
         <div style={styles.brand}>
           <span style={styles.logo}>🌙</span> crescentis
@@ -105,75 +69,60 @@ const styles = {
   footer: {
     backgroundColor: "#000",
     color: "#ffd700",
+    height: "100%",
     textAlign: "center",
     fontFamily: "Arial, sans-serif",
-    position: "relative",
-    paddingBottom: "220px",
-    paddingTop: "100px",
+    padding: "50px 20px 100px",
     overflow: "hidden",
+    position: "relative",
   },
 
-  galaxyContainer: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    gap: "30px",
-    maxWidth: "95%",
-    margin: "0 auto 60px",
+  portfolioSection: {
+    marginBottom: "40px",
   },
 
-  planet: {
-    width: "100px",
-    height: "100px",
-    borderRadius: "50%",
-    background: "#111",
-    border: "2px solid #ffd700",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    animation: "glowPulse 2.5s infinite ease-in-out",
-    boxShadow: "0 0 20px #ffd70044",
-  },
-
-  letter: {
-    fontSize: "2rem",
-    fontWeight: "bold",
-    color: "#ffd700",
-  },
-
-  word: {
-    fontSize: "0.8rem",
-    color: "#fff",
-    marginTop: "5px",
-    padding: "0 5px",
-    textAlign: "center",
-  },
-
-  finalReveal: {
-    marginTop: "60px",
-    padding: "20px",
-    animation: "popIn 1s ease",
-  },
-
-  fullName: {
-    fontSize: "2.5rem",
-    fontWeight: "bold",
-    color: "#ffd700",
+  portfolioTitle: {
+    fontFamily:"DM Sans', sans-serif",
+    fontSize: "50px",
+    marginTop: "10px",
     marginBottom: "10px",
   },
 
-  fullMeaning: {
-    color: "#ccc",
+  portfolioSubtitle: {
     fontSize: "1rem",
-    lineHeight: "1.6",
-    maxWidth: "900px",
-    margin: "0 auto",
+    color: "#ccc",
+  },
+
+  cardContainer: {
+    overflow: "hidden",
+    width: "100%",
+    marginBottom: "60px",
+  },
+
+  cardTrack: {
+    display: "flex",
+    gap: "20px",
+    animation: "slide 20s linear infinite",
+  },
+
+  card: {
+    background: "#111",
+    color: "#ffd700",
+    padding: "20px",
+    borderRadius: "12px",
+    minWidth: "200px",
+    height: "300px",
+    width: "300px",
+    marginTop: "50px",
+    textAlign: "center",
+    boxShadow: "0 0 15px #ffd70044",
+    fontWeight: "bold",
+    flexShrink: 0,
   },
 
   footerArc: {
     position: "absolute",
-    bottom: "160px",
+    bottom: "4px",
     left: "50%",
     transform: "translateX(-50%)",
     width: "600px",
@@ -214,7 +163,6 @@ const styles = {
   link: {
     color: "#ffd700",
     textDecoration: "none",
-    transition: "0.3s",
   },
 
   rights: {

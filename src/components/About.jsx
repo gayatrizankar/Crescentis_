@@ -43,9 +43,9 @@ export default function About() {
             return (
               <p
                 key={idx}
-                className="mb-6 font-bold text-4xl md:text-5xl"
+                className="mb-6  text-4xl md:text-5xl"
                 style={{
-                  fontFamily: "'Oswald', sans-serif",
+                  fontFamily: "DM Sans', sans-serif",
                   background: "linear-gradient(90deg, #76670fff, #FFFACD, #FFFFFF, #5a430aff)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
@@ -94,12 +94,11 @@ export default function About() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="text-xl md:text-2xl text-white font-bold flex items-center gap-3"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-xl md:text-2xl text-white  flex items-center gap-3 font-dm-sans"
             >
               {/* Galaxy emoji bullets */}
               <span className="text-yellow-400 text-2xl">
-                {["🌟", "🌌", "🌙", "✨", "🪐"][i % 5]}
+                {["✅", "✅", "✅", "✅", "✅"][i % 5]}
               </span>
               {point}
             </motion.li>

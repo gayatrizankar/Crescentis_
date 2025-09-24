@@ -47,7 +47,7 @@ const ServiceSection = () => {
         </div>
 
         {/* Title with letter animation */}
-        <h1 className="text-5xl sm:text-6xl font-extrabold text-center mb-6 relative z-10">
+        <h1 className="text-5xl sm:text-6xl  text-center mb-6 relative z-10 font-dm-sans">
           <span className="bg-gradient-to-r from-yellow-100 via-yellow-500 to-yellow-900 text-transparent bg-clip-text">
             {animatedText}
           </span>

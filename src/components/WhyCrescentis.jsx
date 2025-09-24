@@ -10,27 +10,27 @@ export default function CoreValues3DCarousel() {
     {
       title: "Built for Scale from Day One",
       description: "We're engineered to grow with you — from your first campaign to your next round of funding. Our systems and strategies adapt seamlessly as your business evolves. Every decision is data-driven to maximize growth opportunities and ROI. We focus on long-term sustainability while achieving short-term wins.",
-      icon: "🚀"
+      icon: "🌙"
     },
     {
       title: "Hybrid Model = Full Control",
       description: "Branding, marketing, and digital under one roof ensures faster turnarounds. You stay in control while our team ensures creative excellence. We provide full transparency with clear reporting at every step. This approach reduces bottlenecks and accelerates growth.",
-      icon: "🎛️"
+      icon: "🌙"
     },
     {
       title: "Small Team, Big Focus",
       description: "You'll never feel like client #17. Our dedicated team treats your brand as a priority. Every strategy and execution is tailored specifically for you. Small size ensures agility, quality, and exceptional attention to detail. We focus on delivering excellence consistently.",
-      icon: "🔍"
+      icon: "🌙"
     },
     {
       title: "Moonshot Mentality",
       description: "We don't do average. We think big, test fast, and execute smarter. Every campaign is an opportunity to push creative and strategic boundaries. Our mindset ensures continuous learning and improvement. We aim for bold results that make a real impact.",
-      icon: "🌕"
+      icon: "🌙"
     },
     {
       title: "Transparent, No-Nonsense Workflow",
       description: "You'll always know what's happening, what's next, and how it's performing. Complete transparency with detailed reporting and proactive updates. Every task, timeline, and milestone is communicated clearly. Efficiency, trust, and smooth collaboration are guaranteed.",
-      icon: "🪟"
+      icon: "🌙"
     }
   ];
 
@@ -45,7 +45,7 @@ export default function CoreValues3DCarousel() {
   return (
     <section className="relative w-full min-h-screen bg-black flex items-center justify-center perspective-1000 overflow-hidden">
       <div className="container mx-auto max-w-5xl text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-amber-100 to-amber-100">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans">
           What Sets Us Light Years Apart
         </h2>
 
@@ -61,7 +61,7 @@ export default function CoreValues3DCarousel() {
               style={{ transformStyle: "preserve-3d" }}
             >
               <span className="text-4xl mb-4">{features[currentIndex].icon}</span>
-              <h3 className="text-2xl sm:text-5xl md:text-4xl font-extrabold mb-6 text-yellow-400">
+              <h3 className="text-2xl sm:text-5xl md:text-4xl  mb-6 text-yellow-400 font-dm-sans">
                 {features[currentIndex].title}
               </h3>
               <p className="text-white/80 text-base sm:text-lg leading-relaxed">

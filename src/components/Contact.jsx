@@ -9,7 +9,7 @@ const Contact = () => {
       <div><Navbar/></div>
       <div className="relative bg-gradient-to-b from-black via-purple-900/30 to-black py-16 px-6 text-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
-        <h1 className="text-5xl font-bold text-yellow-400 relative z-10">
+        <h1 className="text-5xl  text-yellow-400 relative z-10 font-dm-sans ">
           Contact Us
         </h1>
         <p className="mt-4 text-lg max-w-2xl mx-auto text-gray-300 relative z-10">
