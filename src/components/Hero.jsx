@@ -36,7 +36,7 @@ export default function FullScreenSnap() {
       <section className="h-screen flex items-center justify-center" style={{ scrollSnapAlign: "start" }}>
         <WhyCrescentis />
       </section>
-
+      
       <section
   className="h-screen flex items-center justify-center"
   style={{ scrollSnapAlign: "start" }}

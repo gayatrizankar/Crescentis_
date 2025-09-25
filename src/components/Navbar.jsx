@@ -17,7 +17,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <nav className="flex gap-6 text-gray-300 text-sm font-medium">
-          {["Home", "About", "Services", "Pricing", "Contact"].map((item, i) => (
+          {["Home", "About", "Services", "Pricing", "Contact","Founders"].map((item, i) => (
             <a
               key={i}
               href={
@@ -30,7 +30,9 @@ const Navbar = () => {
                   : item === "Pricing"
                   ? "/pricing"
                   : item === "Services"
-                  ? "/services"
+                  ? "/services":
+                  item === "Founders"
+                  ? "/founders"
                   : `#${item.toLowerCase()}`
               }
               className="relative group"

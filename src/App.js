@@ -5,9 +5,11 @@ import AboutSection from "./components/AboutSection";
 import Contact from "./components/Contact";
 import PricingSection from "./components/PricingSection";
 import ServicesSection from "./components/ServicesSection";
+import Founders from "./components/Founders";
 
 function App() {
   return (
+    
     <Router>
       <Routes>
         <Route path="/" element={<Hero />} />
@@ -15,6 +17,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/pricing" element={<PricingSection />} />
         <Route path="/services" element={<ServicesSection />} />
+        <Route path="/founders" element={<Founders />} />
       </Routes>
     </Router>
   );

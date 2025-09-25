@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
-import Founders from "./Founders"; // Part 4
+
 
 const AboutSection = () => {
   const [zoomPhase, setZoomPhase] = useState("initial");
@@ -103,7 +103,7 @@ const AboutSection = () => {
       {/* Part 1 */}
       {!showSecondText && (
         <div className="top-section initial-text">
-          <h1 className="animate-text show yellow yellow-small">About Us</h1>
+          <h1 className="animate-text show text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-700 via-amber-200 to-amber-200 font-dm-sans">About Us</h1>
           <p className="animate-text show">
             Learn more about our{" "}
             <span className="yellow-small">creative journey</span>, innovative
@@ -113,19 +113,19 @@ const AboutSection = () => {
           </p>
           <ul>
             <li className="animate-text">
-              <span className="yellow">🌌</span>  Innovating Beyond Limits — blending creativity, technology, and strategy to shape the future of digital experiences.
+              <span className="yellow">🌍</span>  Innovating Beyond Limits — blending creativity, technology, and strategy to shape the future of digital experiences.
             </li>
             <li className="animate-text">
-              <span className="yellow">⚡</span>  Performance-Driven Solutions — delivering measurable growth with data-backed strategies.
+              <span className="yellow">🌍</span>  Performance-Driven Solutions — delivering measurable growth with data-backed strategies.
             </li>
             <li className="animate-text">
-              <span className="yellow">🤝 </span> Global Partnerships — empowering brands across industries and continents.
+              <span className="yellow">🌍 </span> Global Partnerships — empowering brands across industries and continents.
             </li>
             <li className="animate-text">
-              <span className="yellow"> 💡</span> Cutting-Edge Technology — harnessing AI, automation, and next-gen tools for maximum impact.
+              <span className="yellow">🌍</span> Cutting-Edge Technology — harnessing AI, automation, and next-gen tools for maximum impact.
             </li>
             <li className="animate-text">
-              <span className="yellow">⭐</span>  Customer-Centric Approach — building long-term success through trust, results, and excellence.
+              <span className="yellow"></span>  Customer-Centric Approach — building long-term success through trust, results, and excellence.
             </li>
           </ul>
         </div>
@@ -134,7 +134,8 @@ const AboutSection = () => {
       {/* Part 2 */}
       {showSecondText && !showThirdPart && (
         <div className="second-text">
-          <h2 className="animate-text yellow">Join Our Digital Revolution</h2>
+          <h2 className="animate-text text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent
+           bg-gradient-to-r from-yellow-500 via-amber-200 to-amber-200 font-dm-sans">Join Our Digital Revolution</h2>
           <p className="animate-text">
             We believe in pushing boundaries and setting new standards.
           </p>
@@ -155,7 +156,7 @@ const AboutSection = () => {
       {/* Part 3 */}
       {showThirdPart && !showFounders && (
         <div className="third-part">
-          <h2 className="animate-text yellow">What Sets Us Apart</h2>
+          <h2 className="animate-text text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans">What Sets Us Apart</h2>
           <ul>
             <li className="animate-text">
               <span className="yellow">✔</span> Personalized Campaigns
@@ -170,12 +171,14 @@ const AboutSection = () => {
               <span className="yellow">✔</span> Sustainable Growth
             </li>
           </ul>
-          <button className="animate-text">Contact Us</button>
+         <a href="/contact">
+  <button className="animate-text">Contact Us</button>
+</a>
+
         </div>
       )}
 
-      {/* Part 4 */}
-      {showFounders && <Founders onBack={() => setShowFounders(false)} />}
+
     </div>
   );
 };
