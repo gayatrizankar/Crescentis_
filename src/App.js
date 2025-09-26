@@ -6,10 +6,11 @@ import Contact from "./components/Contact";
 import PricingSection from "./components/PricingSection";
 import ServicesSection from "./components/ServicesSection";
 import Founders from "./components/Founders";
+import LoginPage from "./components/LoginPage";
+import SignupPage from "./components/SignupPage";
 
 function App() {
   return (
-    
     <Router>
       <Routes>
         <Route path="/" element={<Hero />} />
@@ -18,6 +19,9 @@ function App() {
         <Route path="/pricing" element={<PricingSection />} />
         <Route path="/services" element={<ServicesSection />} />
         <Route path="/founders" element={<Founders />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+
       </Routes>
     </Router>
   );

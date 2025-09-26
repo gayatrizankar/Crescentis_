@@ -1,6 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
+
+
 
 export default function HeroIntro() {
   return (
@@ -43,14 +46,17 @@ export default function HeroIntro() {
           Crescentis Marketing Co. is a full-stack digital agency helping bold brands scale with strategic marketing, design, and digital solutions. Powered by ambition, driven by results.
         </motion.p>
 
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.1, duration: 0.8 }}
-          className="mt-8 px-10 py-3 bg-yellow-400 text-black text-xl rounded-xl shadow-lg hover:bg-yellow-300 transition font-dm-sans"
-        >
-          Get Started
-        </motion.button>
+        <Link to="/login">
+  <motion.button
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 2.1, duration: 0.8 }}
+    className="mt-8 px-10 py-3 bg-yellow-400 text-black text-xl rounded-xl shadow-lg hover:bg-yellow-300 transition font-dm-sans"
+  >
+    Get Started
+  </motion.button>
+</Link>
+
       </div>
 
       {/* Rising Moon with Glow */}
