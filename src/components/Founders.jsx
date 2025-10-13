@@ -26,8 +26,8 @@ export default function Founders({ founders }) {
 
       <div className="max-w-6xl mx-auto">
         <header className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans">
-            Meet our founders
+          <h2 className="text-3xl sm:text-4xl md:text-5xl  mb-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans font-serif font-bold">
+            MEET OUT FOUNDERS
           </h2>
           <p className="mt-2 text-yellow-200/80 max-w-2xl mx-auto">
             Seven passionate builders driving the company forward.

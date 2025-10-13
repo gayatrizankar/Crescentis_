@@ -8,8 +8,8 @@ const Contact = () => {
       {/* Hero Section */}
       <div><Navbar/></div>
       <div className="relative bg-gradient-to-b from-black via-purple-900/30 to-black py-16 px-6 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
-        <h1 className="text-5xl  text-yellow-400 relative z-10 font-dm-sans ">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 font-serif font-bold"></div>
+        <h1 className="text-5xl  text-yellow-400 relative z-10 font-dm-sans font-serif font-bold">
           Contact Us
         </h1>
         <p className="mt-4 text-lg max-w-2xl mx-auto text-gray-300 relative z-10">
@@ -99,12 +99,10 @@ const Contact = () => {
 
       {/* Footer Banner */}
       <div className="relative py-16 text-center bg-gradient-to-b from-black via-purple-900/30 to-black">
-        <h2 className="text-3xl font-bold text-yellow-400">
-          We Are Always Ready To Take A Perfect Shot
-        </h2>
-        <button className="mt-6 px-6 py-3 rounded-lg bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition">
-          Get In Touch
-        </button>
+        
+        <a href="/founders" className="mt-3 px-6 py-3 rounded-lg bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition">
+           OUR FOUNDERS
+        </a>
       </div>
 
       {/* Footer */}

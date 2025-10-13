@@ -45,7 +45,7 @@ export default function CoreValues3DCarousel() {
   return (
     <section className="relative w-full min-h-screen bg-black flex items-center justify-center perspective-1000 overflow-hidden">
       <div className="container mx-auto max-w-5xl text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans font-serif font-bold">
           What Sets Us Light Years Apart
         </h2>
 
@@ -61,7 +61,7 @@ export default function CoreValues3DCarousel() {
               style={{ transformStyle: "preserve-3d" }}
             >
               <span className="text-4xl mb-4">{features[currentIndex].icon}</span>
-              <h3 className="text-2xl sm:text-5xl md:text-4xl  mb-6 text-yellow-400 font-dm-sans">
+              <h3 className="text-2xl sm:text-5xl md:text-4xl  mb-6 text-yellow-400 font-dm-sans font-serif font-bold">
                 {features[currentIndex].title}
               </h3>
               <p className="text-white/80 text-base sm:text-lg leading-relaxed">

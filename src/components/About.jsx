@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function About() {
   // Text content on the left
   const leftText = [
-    "We are Cresco Digital:",
+    "WE ARE CRESCO DIGITAL:",
     "At Cresco Digital, we specialize in helping brands scale with creativity, strategy, and technology. Our approach blends artistry with data-driven solutions, ensuring measurable growth and a lasting digital impact."
   ];
 
@@ -43,9 +43,9 @@ export default function About() {
             return (
               <p
                 key={idx}
-                className="mb-6  text-4xl md:text-5xl"
+                className="mb-6  font-bold text-4xl md:text-5xl"
                 style={{
-                  fontFamily: "DM Sans', sans-serif",
+                  fontFamily: "serif bold",
                   background: "linear-gradient(90deg, #76670fff, #FFFACD, #FFFFFF, #5a430aff)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",

@@ -98,7 +98,7 @@ const CoreValues = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-yellow-200 to-yellow-300">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-yellow-200 to-yellow-300 font-serif font-bold">
             Our Core Values
           </h2>
           <motion.div

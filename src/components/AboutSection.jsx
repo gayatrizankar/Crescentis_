@@ -103,7 +103,7 @@ const AboutSection = () => {
       {/* Part 1 */}
       {!showSecondText && (
         <div className="top-section initial-text">
-          <h1 className="animate-text show text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-700 via-amber-200 to-amber-200 font-dm-sans">About Us</h1>
+          <h1 className="animate-text show text-3xl sm:text-4xl md:text-5xl  mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-700 via-amber-200 to-amber-200 font-dm-sans font-serif font-bold">ABOUT US</h1>
           <p className="animate-text show">
             Learn more about our{" "}
             <span className="yellow-small">creative journey</span>, innovative
@@ -135,7 +135,7 @@ const AboutSection = () => {
       {showSecondText && !showThirdPart && (
         <div className="second-text">
           <h2 className="animate-text text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent
-           bg-gradient-to-r from-yellow-500 via-amber-200 to-amber-200 font-dm-sans">Join Our Digital Revolution</h2>
+           bg-gradient-to-r from-yellow-500 via-amber-200 to-amber-200 font-dm-sans font-serif font-bold">JOIN OUR DIGITAL REVOLUTION</h2>
           <p className="animate-text">
             We believe in pushing boundaries and setting new standards.
           </p>
@@ -156,7 +156,7 @@ const AboutSection = () => {
       {/* Part 3 */}
       {showThirdPart && !showFounders && (
         <div className="third-part">
-          <h2 className="animate-text text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans">What Sets Us Apart</h2>
+          <h2 className="animate-text text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans font-serif font-bold">WHAT SET US APART</h2>
           <ul>
             <li className="animate-text">
               <span className="yellow">✔</span> Personalized Campaigns

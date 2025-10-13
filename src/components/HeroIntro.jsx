@@ -3,60 +3,77 @@ import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
-
-
 export default function HeroIntro() {
   return (
     <section className="relative h-screen w-full flex flex-col overflow-hidden bg-black">
       {/* Navbar */}
-     <Navbar />
+      <Navbar />
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-start h-full text-center px-6 pt-[40px]">
-        <motion.h1
+       <motion.h1
   initial={{ opacity: 0, y: 50 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.5, duration: 1 }}
-  className="text-[4.625rem] lg:text-[7.25rem] leading-none font-[410] font-dm-sans opacity-70 tracking-tight relative"
+  className="text-[4.625rem] lg:text-[7.25rem] leading-none font-[410] font-serif font-bold opacity-70 tracking-tight relative"
   style={{
-    background: "linear-gradient(90deg, #bca41aff, #e0d027ff, #d1cc9dff, #FFD700, #FFB800)", // more golden gradient
+    background:
+      "linear-gradient(90deg, #bca41aff, #e0d027ff, #d1cc9dff, #FFD700, #FFB800)",
     WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
+    color: "transparent", // ✅ Fix: prevents background box
   }}
 >
-  Crescentis
+  <motion.span
+    animate={{
+      filter: [
+        "drop-shadow(0 0 4px rgba(255, 215, 0, 0.6))",
+        "drop-shadow(0 0 10px rgba(255, 215, 0, 0.8))",
+        "drop-shadow(0 0 4px rgba(255, 215, 0, 0.6))",
+      ],
+    }}
+    transition={{
+      duration: 2.5,
+      repeat: Infinity,
+      repeatType: "mirror",
+    }}
+    style={{
+      background:
+        "linear-gradient(90deg, #bca41aff, #e0d027ff, #d1cc9dff, #FFD700, #FFB800)",
+      WebkitBackgroundClip: "text",
+      color: "transparent",
+      display: "inline-block",
+    }}
+  >
+    CRESCENTIS
+  </motion.span>
+
+  <br />
+
+  <span className="font-medium text-7xl">MARKETING CO.</span>
+
   <motion.span
     initial={{ scaleX: 0 }}
     animate={{ scaleX: 1 }}
     transition={{ delay: 1, duration: 0.6 }}
     className="block w-32 h-1 mx-auto mt-3 rounded-full origin-left"
     style={{
-      background: "linear-gradient(to right, #FFD700, #FFEA00, #FFFACD, #FFD700, #FFB800)",
+      background:
+        "linear-gradient(to right, #FFD700, #FFEA00, #FFFACD, #FFD700, #FFB800)",
     }}
   />
 </motion.h1>
 
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-          className="mt-4 text-base md:text-lg text-gray-300 max-w-lg text-white text-base lg:text-lg text-center max-w-[67ch] lg:max-w-[75ch]  font-dm-sans"
-        >
-          Crescentis Marketing Co. is a full-stack digital agency helping bold brands scale with strategic marketing, design, and digital solutions. Powered by ambition, driven by results.
-        </motion.p>
-
         <Link to="/login">
-  <motion.button
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 2.1, duration: 0.8 }}
-    className="mt-8 px-10 py-3 bg-yellow-400 text-black text-xl rounded-xl shadow-lg hover:bg-yellow-300 transition font-dm-sans"
-  >
-    Get Started
-  </motion.button>
-</Link>
-
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.1, duration: 0.8 }}
+            className="mt-8 px-10 py-3 bg-yellow-400 text-black text-xl rounded-xl shadow-lg hover:bg-yellow-300 transition font-dm-sans"
+          >
+            Get Started
+          </motion.button>
+        </Link>
       </div>
 
       {/* Rising Moon with Glow */}

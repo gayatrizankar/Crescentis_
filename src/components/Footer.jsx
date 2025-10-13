@@ -20,7 +20,7 @@ const Footer = () => {
     <footer ref={ref} style={styles.footer}>
       {/* Our Client Portfolio Section */}
       <div style={styles.portfolioSection}>
-        <h2  style={styles.portfolioTitle} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans">Our Client Portfolio</h2>
+        <h2  style={styles.portfolioTitle} className="text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans font-serif font-bold">Our Client Portfolio</h2>
         <p style={styles.portfolioSubtitle}>
           Showcasing some of the brands we’ve proudly worked with
         </p>

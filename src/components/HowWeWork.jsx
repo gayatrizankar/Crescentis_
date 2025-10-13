@@ -32,7 +32,7 @@ const HowWeWork = () => {
   return (
     <div style={styles.container}>
       {/* Main Heading */}
-      <h1 style={styles.title} className='text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans'>HOW WE WORK</h1>
+      <h1 style={styles.title} className='text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans font-serif font-bold'>HOW WE WORK</h1>
 
       {/* Subheading */}
       <h3 style={styles.subheading}>Our 4-Step Process</h3>
