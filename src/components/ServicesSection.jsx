@@ -4,25 +4,44 @@ import Navbar from "./Navbar";
 const ServiceSection = () => {
   const services = [
     {
-      title: "Project-Based Services",
-      description: "One-time, high-impact offerings to kickstart or refine your brand.",
-      items: ["Branding & Identity", "Website & Landing Page Design", "Brand Strategy & Messaging", "Campaign Development"],
+      title: "Comprehensive Marketing Services",
+      description:
+        "We offer comprehensive marketing, web, and content services designed to fuel your growth. ",
+      items: [
+        "Our 360° solutions cover every aspect of digital promotion.",
+        "Keyword Research & SEO",
+        "Content Creation & Copywriting",
+        "Conversion Rate Optimization",
+        "Tailored Strategy for Each Business",
+      ],
     },
     {
-      title: "Retainer Services",
-      description: "Ongoing partnerships to keep your brand active, relevant, and growing.",
-      items: ["Social Media Management", "Content Creation (Reels, Carousels, Stories, Blogs)", "Paid Ads (Meta, Google, LinkedIn)", "Email Marketing & CRM"],
+      title: "SEO & SEM",
+      description:
+        "We improve your search engine rankings",
+      items: [
+        " Drive qualified traffic through a structured approach to SEO and PPC campaigns.",
+        "SEO Audit: Analyzing title tags, meta descriptions, content, site structure, and technical aspects",
+        "Implementation: Optimizing on-page content, meta tags, and backlinks to boost authority",
+        "Monitoring: Continuous tracking of rankings and user behavior to refine strategy",
+      ],
     },
     {
-      title: "Performance Marketing",
-      description: "Data-driven campaigns built for ROI.",
-      items: ["Conversion-Led Campaigns", "Funnel Optimization", "Lead Generation", "Analytics & Reporting"],
+      title: "Customized Solutions",
+      description:
+        "Whether you’re a startup in Pune or an established company in Mumbai, we have the tools and expertise to achieve your goals.",
+      items: [
+        "Full-stack marketing tailored to your brand",
+        "Data-driven strategies for sustainable growth",
+        "Performance monitoring and reporting",
+        "Flexible solutions for startups and enterprises",
+      ],
     },
   ];
 
   const scrollingCards = [...services, ...services];
 
-  // For letter-by-letter animation
+  // Letter-by-letter animation for the heading
   const [animatedText, setAnimatedText] = useState("");
   const fullTitle = "Unlimited Digital Marketing, Unlimited Growth";
 
@@ -47,7 +66,7 @@ const ServiceSection = () => {
         </div>
 
         {/* Title with letter animation */}
-        <h1 className="text-5xl sm:text-6xl  text-center mb-6 relative z-10 font-dm-sans">
+        <h1 className="text-5xl sm:text-6xl text-center mb-6 relative z-10 font-dm-sans">
           <span className="bg-gradient-to-r from-yellow-100 via-yellow-500 to-yellow-900 text-transparent bg-clip-text font-serif font-bold">
             {animatedText}
           </span>
@@ -59,15 +78,15 @@ const ServiceSection = () => {
 
         {/* Features */}
         <div className="flex flex-col items-center gap-4 text-gray-300 text-md mb-10 relative z-10">
-          <span>✅ Guaranteed ROI-focused strategies</span>
-          <span>✅ No contracts, no hidden fees</span>
-          <span>✅ Cancel or pause anytime</span>
+          <span>✅ Tailored marketing strategies for every business</span>
+          <span>✅ Full SEO & SEM services for qualified traffic</span>
+          <span>✅ Continuous monitoring and performance optimization</span>
         </div>
 
         {/* Button */}
         <div className="flex justify-center mb-16 relative z-10">
           <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 text-black font-semibold shadow-lg shadow-yellow-500/50 hover:scale-105 transition">
-            Make your ideas happen
+            Start Your Growth Journey
           </button>
         </div>
 

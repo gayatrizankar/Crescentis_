@@ -6,15 +6,15 @@ const Contact = () => {
   return (
     <div className="bg-black text-white min-h-screen">
       {/* Hero Section */}
-      <div><Navbar/></div>
+      <div><Navbar /></div>
       <div className="relative bg-gradient-to-b from-black via-purple-900/30 to-black py-16 px-6 text-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 font-serif font-bold"></div>
-        <h1 className="text-5xl  text-yellow-400 relative z-10 font-dm-sans font-serif font-bold">
+        <h1 className="text-5xl text-yellow-400 relative z-10 font-dm-sans font-serif font-bold">
           Contact Us
         </h1>
         <p className="mt-4 text-lg max-w-2xl mx-auto text-gray-300 relative z-10">
-          We’d love to hear from you! Get in touch with us for collaborations,
-          inquiries, or just to say hello.
+          Ready to launch your marketing to the next orbit? Contact Crescentis Marketing Co. today. 
+          We’re here to discuss your project goals, whether you’re a Pune startup or a business in Mumbai or anywhere in India.
         </p>
       </div>
 
@@ -58,31 +58,31 @@ const Contact = () => {
         {/* Info Section */}
         <div className="flex flex-col justify-center space-y-6">
           <div className="flex items-center space-x-4">
-            <Phone className="text-yellow-400 w-8 h-8" />
-            <div>
-              <p className="text-lg font-semibold">Phone Number</p>
-              <p className="text-gray-300">+1 (234) 567-890</p>
-            </div>
-          </div>
-          <div className="flex items-center space-x-4">
             <Mail className="text-yellow-400 w-8 h-8" />
             <div>
-              <p className="text-lg font-semibold">Email Address</p>
-              <p className="text-gray-300">info@galaxybrand.com</p>
+              <p className="text-lg font-semibold">Email</p>
+              <p className="text-gray-300">crescentismarketingco@gmail.com</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <MessageSquare className="text-yellow-400 w-8 h-8" />
+            <Phone className="text-yellow-400 w-8 h-8" />
             <div>
-              <p className="text-lg font-semibold">Whatsapp</p>
-              <p className="text-gray-300">+1 (987) 654-3210</p>
+              <p className="text-lg font-semibold">Phone</p>
+              <p className="text-gray-300">+91 9822755750, +91 9172810759</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
             <MapPin className="text-yellow-400 w-8 h-8" />
             <div>
-              <p className="text-lg font-semibold">Our Office</p>
-              <p className="text-gray-300">2468 Star Blvd, Cosmic City, Galaxy</p>
+              <p className="text-lg font-semibold">Office (Pune)</p>
+              <p className="text-gray-300">R Cube, Mihan Nagar, Dhankawadi, Pune, 411043</p>
+            </div>
+          </div>
+          <div className="flex items-center space-x-4">
+            <MessageSquare className="text-yellow-400 w-8 h-8" />
+            <div>
+              <p className="text-lg font-semibold">WhatsApp / Message</p>
+              <p className="text-gray-300">+91 9822755750</p>
             </div>
           </div>
           <div className="mt-6">
@@ -90,7 +90,7 @@ const Contact = () => {
               title="Office Location"
               src="/maps_b482.jpg"
               className="w-full object-contain h-64 rounded-xl border-2 border-yellow-400"
-              allowFullScreen=""
+              allowFullScreen
               loading="lazy"
             ></iframe>
           </div>
@@ -99,15 +99,17 @@ const Contact = () => {
 
       {/* Footer Banner */}
       <div className="relative py-16 text-center bg-gradient-to-b from-black via-purple-900/30 to-black">
-        
-        <a href="/founders" className="mt-3 px-6 py-3 rounded-lg bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition">
-           OUR FOUNDERS
+        <a
+          href="/founders"
+          className="mt-3 px-6 py-3 rounded-lg bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition"
+        >
+          OUR FOUNDERS
         </a>
       </div>
 
       {/* Footer */}
       <footer className="bg-black border-t border-gray-800 py-8 px-6 text-center text-gray-400">
-        <p>© 2025 Galaxy Brand. All Rights Reserved.</p>
+        <p>© 2025 Crescentis Marketing Co. All Rights Reserved.</p>
       </footer>
     </div>
   );

@@ -2,20 +2,21 @@
 import { motion } from "framer-motion";
 
 export default function About() {
-  // Text content on the left
+  // Left text content
   const leftText = [
-    "WE ARE CRESCO DIGITAL:",
-    "At Cresco Digital, we specialize in helping brands scale with creativity, strategy, and technology. Our approach blends artistry with data-driven solutions, ensuring measurable growth and a lasting digital impact."
+    "ABOUT CRESCENTIS MARKETING CO.",
+    "At Crescentis Marketing Co., we believe that quality content is the fuel that drives digital success. We are a full-stack 360° marketing agency helping brands launch, grow, and scale with purpose and creativity."
   ];
 
+  // Updated company points (from your given text)
   const companyPoints = [
-    "Founded in 2015 with a mission to empower brands digitally",
-    "Expertise in creativity, strategy, and technology",
-    "Proven track record of measurable growth for clients",
-    "Passionate team driven by innovation and results",
-    "Global mindset with local understanding"
+    "Headquartered in Pune, Maharashtra, serving startups and growing businesses across Mumbai, Pune, and India.",
+    "Driven by data, powered by creativity — crafting strategies that deliver measurable growth.",
+    "Focused on boosting brand visibility, engagement, and conversions through performance marketing.",
+    "Expertise in digital branding, SEO, social media, and creative storytelling.",
   ];
 
+  // Animations
   const wordVariants = {
     hidden: { opacity: 0, y: -30 },
     visible: { opacity: 1, y: 0 }
@@ -32,8 +33,7 @@ export default function About() {
 
   return (
     <section className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col md:flex-row px-8 pt-32 font-sans">
-
-      {/* Left Column - All Text */}
+      {/* Left Column - Text */}
       <div className="relative z-10 md:w-1/2 text-left">
         {leftText.map((text, idx) => {
           const isHeading = idx === 0;
@@ -43,10 +43,11 @@ export default function About() {
             return (
               <p
                 key={idx}
-                className="mb-6  font-bold text-4xl md:text-5xl"
+                className="mb-6 font-bold text-4xl md:text-5xl"
                 style={{
-                  fontFamily: "serif bold",
-                  background: "linear-gradient(90deg, #76670fff, #FFFACD, #FFFFFF, #5a430aff)",
+                  fontFamily: " bold serif",
+                  background:
+                    "linear-gradient(90deg, #76670fff, #FFFACD, #FFFFFF, #5a430aff)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   display: "inline-block",
@@ -59,7 +60,11 @@ export default function About() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
-                    transition={{ delay: wIdx * 0.15 + idx * 0.3, duration: 0.6, ease: "easeOut" }}
+                    transition={{
+                      delay: wIdx * 0.15 + idx * 0.3,
+                      duration: 0.6,
+                      ease: "easeOut",
+                    }}
                     style={{ display: "inline-block", marginRight: "6px" }}
                   >
                     {word}
@@ -94,12 +99,9 @@ export default function About() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="text-xl md:text-2xl text-white  flex items-center gap-3 font-dm-sans"
+              className="text-xl md:text-2xl text-white flex items-center gap-3 font-dm-sans"
             >
-              {/* Galaxy emoji bullets */}
-              <span className="text-yellow-400 text-2xl">
-                {["✅", "✅", "✅", "✅", "✅"][i % 5]}
-              </span>
+              <span className="text-yellow-400 text-2xl">🌕</span>
               {point}
             </motion.li>
           ))}
@@ -112,7 +114,7 @@ export default function About() {
         initial={{ x: 0, y: 0, scale: 1 }}
         whileInView={{ x: 400, y: 400, scale: 0.8 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
+        transition={{ duration: 2, ease: 'easeInOut' }}
       >
         <motion.img
           src="/moony.png"
@@ -121,13 +123,10 @@ export default function About() {
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 80, ease: "linear" }}
         />
-
-        {/* Glow layers */}
         <div className="absolute inset-0 rounded-full aspect-square bg-yellow-400/30 blur-[200px]"></div>
         <div className="absolute inset-0 rounded-full aspect-square bg-yellow-400/15 blur-[350px]"></div>
         <div className="absolute inset-0 rounded-full aspect-square bg-yellow-400/10 blur-[500px]"></div>
       </motion.div>
-
     </section>
   );
 }

@@ -9,20 +9,20 @@ const WhyChooseCrescentis = () => {
 
   const boxData = [
     {
-      title: "🛠️ Built-In Team. No Outsourcing.",
-      text: "We operate with a strong in-house team for strategy, content, design, and execution, giving you faster turnarounds, higher quality, and better alignment. Our team’s expertise ensures consistency across all channels and campaigns, minimizing miscommunication and delays.",
+      title: "🔍 SEO & SEM: Visibility that Converts",
+      text: "We boost your visibility in Pune and beyond with optimized URLs, titles, and content. Our data-driven Google and social media ads target the right keywords — even location-specific ones like “digital marketing agency Pune” — bringing in qualified leads and measurable ROI.",
     },
     {
-      title: "📊 Performance Meets Reputation.",
-      text: "We don’t just chase clicks, we build trust. Our dual focus ensures that your brand doesn’t just grow fast, it grows well. We implement ethical marketing strategies while measuring real ROI to ensure sustainable success.",
+      title: "✍️ Content Marketing & Copywriting",
+      text: "We create engaging, keyword-rich content that educates and converts. From blogs to social posts and case studies, our storytelling approach improves search rankings while delivering high ROI — especially for startups looking to grow efficiently.",
     },
     {
-      title: "🧩 Full-Stack Marketing, Start to Scale.",
-      text: "From brand identity to performance marketing, we deliver end-to-end solutions tailored to where your business is today and where it’s going. Whether you’re a startup or scaling enterprise, we align marketing strategies to growth objectives with measurable outcomes.",
+      title: "📱 Social Media & Branding",
+      text: "We craft bold brand voices and creative campaigns across Instagram, LinkedIn, and more. By turning clicks into conversations, we help you connect authentically with customers and build long-term loyalty through consistent storytelling.",
     },
     {
-      title: "🤝 Collaborative & Adaptive.",
-      text: "We’re not “vendors.” We partner with you, adapt to your style, and stay agile to meet evolving business needs. Continuous feedback loops and strategic consultations make sure your vision is always reflected in the results.",
+      title: "💻 Web Design & Development",
+      text: "Your website is your digital spacecraft. We design responsive, high-speed, SEO-optimized websites with intuitive UX — helping you rank higher, load faster, and convert visitors into loyal customers with every click.",
     },
   ];
 
@@ -32,7 +32,6 @@ const WhyChooseCrescentis = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Trigger animations
           setShowMoon(false);
           setVisibleBoxes([]);
           setTimeout(() => setShowMoon(true), 300);
@@ -44,11 +43,10 @@ const WhyChooseCrescentis = () => {
             }, delay);
           });
 
-          // Stop observing after first trigger
           observer.disconnect();
         }
       },
-      { threshold: 0.3 } // trigger when 30% of section is visible
+      { threshold: 0.3 }
     );
 
     observer.observe(sectionRef.current);
@@ -90,6 +88,7 @@ const WhyChooseCrescentis = () => {
             </div>
           ))}
         </div>
+
         <div style={styles.column}>
           {boxData.slice(2, 4).map((box, i) => (
             <div
@@ -169,10 +168,12 @@ const styles = {
   },
   boxTitle: {
     color: "#b78cff",
-    marginBottom: "15px",
+    marginBottom: "10px",
   },
   boxText: {
     color: "#fff",
+    fontSize: "1rem",
+    lineHeight: "1.5",
   },
 };
 

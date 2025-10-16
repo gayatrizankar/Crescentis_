@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 
-
 const AboutSection = () => {
   const [zoomPhase, setZoomPhase] = useState("initial");
   const [showSecondText, setShowSecondText] = useState(false);
@@ -100,85 +99,93 @@ const AboutSection = () => {
         ></div>
       </div>
 
-      {/* Part 1 */}
+      {/* Part 1 — About Crescentis */}
       {!showSecondText && (
         <div className="top-section initial-text">
-          <h1 className="animate-text show text-3xl sm:text-4xl md:text-5xl  mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-700 via-amber-200 to-amber-200 font-dm-sans font-serif font-bold">ABOUT US</h1>
+          <h1 className="animate-text show text-3xl sm:text-4xl md:text-5xl mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-700 via-amber-200 to-amber-200 font-serif font-bold">
+            ABOUT CRESCENTIS MARKETING CO.
+          </h1>
           <p className="animate-text show">
-            Learn more about our{" "}
-            <span className="yellow-small">creative journey</span>, innovative
-            solutions, and
-            <span className="yellow-small"> performance-driven strategies</span>
-            .
+            We were founded on one belief —{" "}
+            <span className="yellow-small">data-driven creativity</span> can
+            propel brands to new heights. Based in Pune, we proudly serve
+            businesses across Mumbai and India.
           </p>
           <ul>
             <li className="animate-text">
-              <span className="yellow">🌍</span>  Innovating Beyond Limits — blending creativity, technology, and strategy to shape the future of digital experiences.
+              <span className="yellow">1.</span> Our passionate team of
+              marketers, designers, and writers operates from our “mission
+              control” — guiding brands toward digital excellence.
             </li>
+
+            {/* Fixed custom strategies bullet */}
             <li className="animate-text">
-              <span className="yellow">🌍</span>  Performance-Driven Solutions — delivering measurable growth with data-backed strategies.
+              <span className="yellow">2.</span> We craft custom strategies that fit your brand perfectly — because no two growth journeys are alike.
             </li>
-            <li className="animate-text">
-              <span className="yellow">🌍 </span> Global Partnerships — empowering brands across industries and continents.
+            {/* If you want this line completely static (no animation), replace with: 
+            <li>
+              <span className="yellow">🚀</span> We craft custom strategies that fit your brand perfectly — because no two growth journeys are alike.
             </li>
+            */}
+
             <li className="animate-text">
-              <span className="yellow">🌍</span> Cutting-Edge Technology — harnessing AI, automation, and next-gen tools for maximum impact.
-            </li>
-            <li className="animate-text">
-              <span className="yellow"></span>  Customer-Centric Approach — building long-term success through trust, results, and excellence.
+              <span className="yellow">3.</span> Every campaign we launch is
+              powered by insight, innovation, and measurable performance.
             </li>
           </ul>
         </div>
       )}
 
-      {/* Part 2 */}
+      {/* Part 2 — Our Vision & Values */}
       {showSecondText && !showThirdPart && (
         <div className="second-text">
-          <h2 className="animate-text text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent
-           bg-gradient-to-r from-yellow-500 via-amber-200 to-amber-200 font-dm-sans font-serif font-bold">JOIN OUR DIGITAL REVOLUTION</h2>
+          <h2 className="animate-text text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-200 to-amber-200 font-serif font-bold">
+            OUR VISION & VALUES
+          </h2>
           <p className="animate-text">
-            We believe in pushing boundaries and setting new standards.
+            We simplify digital marketing for startups and entrepreneurs,
+            helping them rise above competition with clarity and confidence.
           </p>
           <p className="animate-text">
-            Partner with us to experience innovation, dedication, and unmatched
-            expertise.
+            Transparency, agility, and measurable impact are at the heart of
+            everything we do.
           </p>
           <p className="animate-text">
-            Our commitment is to help your brand thrive with customized
-            strategies.
+            Like a rocket navigating the stars, we adapt in real time to trends,
+            ensuring every move leads to growth.
           </p>
           <p className="animate-text">
-            Let’s build the future of digital marketing — bold and impactful.
+            Our mission: make marketing accessible, data-driven, and effective
+            for every business.
           </p>
         </div>
       )}
 
-      {/* Part 3 */}
+      {/* Part 3 — What Sets Us Apart */}
       {showThirdPart && !showFounders && (
         <div className="third-part">
-          <h2 className="animate-text text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-dm-sans font-serif font-bold">WHAT SET US APART</h2>
+          <h2 className="animate-text text-3xl sm:text-4xl md:text-5xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-amber-100 to-amber-100 font-serif font-bold">
+            WHAT SETS US APART
+          </h2>
           <ul>
             <li className="animate-text">
-              <span className="yellow">✔</span> Personalized Campaigns
+              <span className="yellow">✔</span> Data-Driven Campaigns
             </li>
             <li className="animate-text">
-              <span className="yellow">✔</span> Advanced Analytics
+              <span className="yellow">✔</span> Creative Precision & Strategy
             </li>
             <li className="animate-text">
-              <span className="yellow">✔</span> 24/7 Support
+              <span className="yellow">✔</span> Transparent, Real-Time Reporting
             </li>
             <li className="animate-text">
-              <span className="yellow">✔</span> Sustainable Growth
+              <span className="yellow">✔</span> Scalable Growth for Every Brand
             </li>
           </ul>
-         <a href="/contact">
-  <button className="animate-text">Contact Us</button>
-</a>
-
+          <a href="/contact">
+            <button className="animate-text">Contact Us</button>
+          </a>
         </div>
       )}
-
-
     </div>
   );
 };
@@ -232,14 +239,14 @@ const cssStyles = `
   .top-section, .second-text, .third-part {
     position: relative;
     z-index: 2;
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto 40px;
     text-align: center;
   }
   ul { list-style:none; padding-left:0; margin-top:20px; }
   ul li { font-size:18px; margin-bottom:18px; opacity:0; transform:scale(0.7); transition:all 0.4s ease; display:flex; align-items:flex-start;}
   ul li.show { opacity:1; transform:scale(1);}
-  .yellow { color:#FFD700; font-weight:bold; font-size:30px;}
+  .yellow { color:#FFD700; font-weight:bold; font-size:28px;}
   .yellow-small { color:#FFD700; font-weight:bold;}
   .animate-text { opacity:0; transform:translateX(50px); transition:all 0.6s ease; margin-bottom:15px; }
   .animate-text:nth-child(even){ transform:translateX(-50px);}
