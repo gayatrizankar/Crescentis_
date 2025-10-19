@@ -69,9 +69,9 @@ export default function HeroIntro() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.1, duration: 0.8 }}
-            className="mt-8 px-10 py-3 bg-yellow-400 text-black text-xl rounded-xl shadow-lg hover:bg-yellow-300 transition font-dm-sans"
+            className="mt-8 px-10 py-3 bg-yellow-400 text-black text-xl rounded-xl shadow-lg hover:bg-yellow-300 transition font-bold font-serif"
           >
-            Get Started
+            Book a Strategy Call
           </motion.button>
         </Link>
       </div>
