@@ -12,7 +12,7 @@ const Navbar = () => {
             alt="Crescentis Logo" 
             className="w-8 h-8 object-contain"
           />
-          <div className="text-yellow-400 font-bold text-lg">CRESCENTIS</div>
+          <div className="text-yellow-400 font-bold text-lg font-serif">CRESCENTIS</div>
         </div>
 
         {/* Navigation Links */}
