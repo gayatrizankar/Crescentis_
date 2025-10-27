@@ -1,6 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
-import React, { useState } from "react";
+import { motion, useInView } from "framer-motion";
+import React, { useState, useRef } from "react";
 import Navbar from "./Navbar";
 
 export default function PortfolioSection() {
@@ -8,61 +8,103 @@ export default function PortfolioSection() {
 
   const portfolioItems = [
     {
+      id: 1,
       title: "Ramtek Agro Vision",
       subtitle: "E-commerce Platform Revolution",
-      category: "E-commerce",
       year: "2024",
+      category: "E-commerce",
       image: "/Ramtek-wASQqjYI.jpeg",
-      tags: ["E-commerce Development", "Mobile Optimization", "Inventory Management"],
+      challenge:
+        "Traditional agricultural product distribution was limiting market reach and preventing farmers from accessing quality fertilizers and agricultural products efficiently.",
+      approach:
+        "Developed a comprehensive e-commerce platform with advanced inventory management, farmer-direct sourcing capabilities, and mobile-first design optimized for rural connectivity.",
+      results:
+        "250% increase in online sales, 40% market expansion, and 5000+ new customers within 6 months.",
+      technologies: [
+        "E-commerce Development",
+        "Mobile Optimization",
+        "Inventory Management",
+        "Rural UX",
+      ],
+      metrics: [
+        { value: "250%", label: "Sales Growth" },
+        { value: "40%", label: "Market Expansion" },
+        { value: "5000+", label: "New Customers" },
+        { value: "200+", label: "Product Categories" },
+      ],
+      testimonial:
+        "Midnight Solutions revolutionized our agricultural business with a cutting-edge e-commerce platform that connected us directly with farmers across the region.",
+      client: "Rakesh Gadhave, Founder & CEO",
+      tags: ["E-commerce", "Rural UX", "Mobile App"],
       stats: [
         { label: "Sales Growth", value: "250%" },
-        { label: "Market Expansion", value: "40%" },
+        { label: "Market Reach", value: "40%" },
       ],
       description:
-        "Traditional agricultural product distribution was limiting market reach. Our e-commerce solution connected farmers directly with quality products.",
-      challenge: "Traditional agricultural product distribution was limiting market reach and preventing farmers from accessing quality fertilizers and agricultural products efficiently.",
-      approach: "Developed a comprehensive e-commerce platform with advanced inventory management, farmer-direct sourcing capabilities, and mobile-first design optimized for rural connectivity.",
-      results: "250% increase in online sales, 40% market expansion, and 5000+ new customers within 6 months.",
-      technologies: ["E-commerce Development", "Mobile Optimization", "Inventory Management", "Rural UX"],
-      testimonial: "Midnight Solutions revolutionized our agricultural business with a cutting-edge e-commerce platform that connected us directly with farmers across the region. — Rakesh Gadhave, Founder & CEO"
+        "We created a powerful e-commerce experience connecting farmers and distributors, improving reach and efficiency.",
     },
+
     {
+      id: 2,
       title: "Shakoon Milk",
       subtitle: "Global Brand Transformation",
-      category: "Branding",
       year: "2024",
+      category: "Branding",
       image: "/Shakoon-BgyXLY4X.jpeg",
-      tags: ["Brand Strategy", "International Marketing", "Digital Transformation"],
+      challenge:
+        "Expanding from a local Chiplun dairy brand to achieve global market presence while maintaining brand authenticity and quality perception.",
+      approach:
+        "Comprehensive brand strategy including digital transformation, international marketing campaigns, supply chain optimization, and cultural adaptation for global markets.",
+      results:
+        "300% brand awareness increase, successful entry into 12 international markets, and 180% revenue growth.",
+      technologies: [
+        "Brand Strategy",
+        "International Marketing",
+        "Digital Transformation",
+        "Supply Chain",
+      ],
+      metrics: [
+        { value: "300%", label: "Brand Awareness" },
+        { value: "12", label: "International Markets" },
+        { value: "500+", label: "Distribution Points" },
+        { value: "180%", label: "Revenue Growth" },
+      ],
+      testimonial:
+        "From a local Chiplun brand to global recognition — Midnight Solutions crafted our journey with precision and strategic excellence.",
+      client: "Rugved Ghag, Managing Director",
+      tags: [
+        "Brand Strategy",
+        "International Marketing",
+        "Digital Transformation",
+        "Supply Chain",
+      ],
       stats: [
         { label: "Brand Awareness", value: "300%" },
-        { label: "International Markets", value: "12" },
+        { label: "Revenue Growth", value: "180%" },
       ],
       description:
-        "We helped Shakoon Milk increase brand recognition and expand globally with a strategic branding and digital approach.",
-      challenge: "Shakoon Milk struggled with limited brand visibility and recognition in international markets.",
-      approach: "Implemented a global branding strategy, digital campaigns, and localized marketing to build brand awareness and market penetration.",
-      results: "300% brand awareness increase, successful entry into 12 international markets, and 180% revenue growth.",
-      technologies: ["Brand Strategy", "International Marketing", "Digital Transformation", "Creative Campaigns"],
-      testimonial: "Midnight Solutions helped us transform our brand into a global powerhouse. Our international presence and sales soared! — CEO, Shakoon Milk"
+        "We helped Shakoon Milk transform from a regional dairy producer to an internationally recognized brand through strategic branding and global marketing initiatives.",
     },
-    // You can add more projects here following the same structure
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [activeProject, setActiveProject] = useState(null); // For modal
+  const [activeProject, setActiveProject] = useState(null);
 
   const filteredItems = portfolioItems.filter(
     (item) => selectedCategory === "All" || item.category === selectedCategory
   );
 
-  return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center text-center font-serif overflow-hidden px-6 pb-0 py-32 bg-black text-white">
-      {/* Navbar */}
-      <div className="w-full">
-        <Navbar />
-      </div>
+  // ✅ Scroll animation setup
+  const featuredRef = useRef(null);
+  const gridRef = useRef(null);
+  const isFeaturedInView = useInView(featuredRef, { once: true, margin: "-100px" });
+  const isGridInView = useInView(gridRef, { once: true, margin: "-100px" });
 
-      {/* Golden particles */}
+  return (
+    <section className="relative w-full flex flex-col items-center justify-center text-center font-serif px-6 pt-[150px] bg-black text-white">
+      <Navbar />
+
+      {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {Array.from({ length: 50 }).map((_, i) => (
           <motion.span
@@ -88,7 +130,7 @@ export default function PortfolioSection() {
         ))}
       </div>
 
-      {/* Badge */}
+      {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -98,25 +140,22 @@ export default function PortfolioSection() {
         <span className="text-yellow-400">✨</span> Our Creative Excellence
       </motion.div>
 
-      {/* Title */}
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 1 }}
-        className="text-7xl md:text-6xl font-extrabold text-yellow-400 drop-shadow-[0_0_35px_rgba(255,215,0,0.7)] relative z-10 tracking-tight"
+        className="text-7xl md:text-6xl font-extrabold text-yellow-400 drop-shadow-[0_0_35px_rgba(255,215,0,0.7)] relative z-10"
       >
         PORTFOLIO
       </motion.h1>
 
-      {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 1 }}
         className="mt-12 text-lg md:text-xl text-gray-300 max-w-3xl leading-relaxed relative z-10"
       >
-        Explore our successful projects that transformed businesses and created
-        lasting impact across diverse industries.
+        Explore our successful projects that transformed businesses and created lasting impact across industries.
       </motion.p>
 
       {/* Category Buttons */}
@@ -126,13 +165,13 @@ export default function PortfolioSection() {
         transition={{ delay: 1, duration: 0.8 }}
         className="flex flex-wrap justify-center gap-8 mt-20 relative z-10"
       >
-        {categories.map((cat, index) => (
+        {categories.map((cat, i) => (
           <button
-            key={index}
+            key={i}
             onClick={() => setSelectedCategory(cat)}
             className={`px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 border border-yellow-400/40 ${
               selectedCategory === cat
-                ? "bg-yellow-400 text-black shadow-[0_0_25px_rgba(255,215,0,0.8)] hover:bg-yellow-300"
+                ? "bg-yellow-400 text-black shadow-[0_0_25px_rgba(255,215,0,0.8)]"
                 : "bg-transparent text-gray-300 hover:text-yellow-300 hover:border-yellow-300"
             }`}
           >
@@ -141,220 +180,217 @@ export default function PortfolioSection() {
         ))}
       </motion.div>
 
-      {/* Featured Projects Heading */}
+      {/* ✅ Featured Projects Section with scroll animation */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.5 }}
-        className="mt-32 text-center max-w-4xl mx-auto px-6"
+        ref={featuredRef}
+        initial={{ opacity: 0, y: 80 }}
+        animate={isFeaturedInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center mt-[150px]"
       >
-        <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-400 mb-6 drop-shadow-[0_0_25px_rgba(255,215,0,0.5)]">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent">
           Featured Projects
         </h2>
-        <p className="text-gray-300 text-lg md:text-xl leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed pb-0">
           Discover how we've helped businesses achieve remarkable growth and transformation
         </p>
       </motion.div>
 
-      {/* Portfolio Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-7xl mx-auto mt-16 px-6 relative z-10">
-        {filteredItems.length > 0 ? (
-          filteredItems.map((item, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10 hover:border-yellow-400/30 transition-all duration-500 cursor-pointer"
-              onClick={() => setActiveProject(item)}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="relative overflow-hidden h-64 md:h-80">
-                  <img
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    src={item.image}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-amber-500 text-black rounded-full text-sm font-bold">
-                      {item.category}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 bg-black/50 backdrop-blur-sm text-yellow-400 rounded-full text-sm font-bold border border-yellow-400/30">
-                      {item.year}
-                    </span>
-                  </div>
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-yellow-400/20 rounded-full flex items-center justify-center mb-4 mx-auto backdrop-blur-sm border border-yellow-400/30">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="w-8 h-8 text-yellow-400"
-                        >
-                          <path d="M5 12h14"></path>
-                          <path d="m12 5 7 7-7 7"></path>
-                        </svg>
-                      </div>
-                      <p className="text-white font-medium">View Case Study</p>
-                    </div>
-                  </div>
+      {/* ✅ Grid with scroll animation */}
+      <motion.div
+        ref={gridRef}
+        initial={{ opacity: 0, y: 80 }}
+        animate={isGridInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto mt-16 relative z-10 mb-[150px]"
+      >
+        {filteredItems.map((item) => (
+          <div
+            key={item.id}
+            onClick={() => setActiveProject(item)}
+            className="group relative overflow-hidden rounded-2xl backdrop-blur-sm bg-white/5 border border-white/10 hover:border-yellow-400/30 transition-all duration-500 cursor-pointer"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative z-10">
+              <div className="relative overflow-hidden h-64 md:h-80">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-amber-500 text-black rounded-full text-sm font-bold">
+                    {item.category}
+                  </span>
                 </div>
-                <div className="p-6 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-yellow-400 font-medium mb-4">{item.subtitle}</p>
-                  <div className="mb-6">
-                    {item.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="inline-block bg-white/10 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2 border border-white/20"
+
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 bg-black/50 backdrop-blur-sm text-yellow-400 rounded-full text-sm font-bold border border-yellow-400/30">
+                    {item.year}
+                  </span>
+                </div>
+
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-yellow-400/20 rounded-full flex items-center justify-center mb-4 mx-auto backdrop-blur-sm border border-yellow-400/30">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2"
+                        stroke="currentColor"
+                        className="w-8 h-8 text-yellow-400"
                       >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <p className="text-gray-300 mb-6 leading-relaxed">{item.description}</p>
-                  <div className="grid grid-cols-2 gap-4">
-                    {item.stats.map((stat, idx) => (
-                      <div key={idx} className="text-center">
-                        <div className="text-2xl font-bold text-yellow-400 mb-1">{stat.value}</div>
-                        <div className="text-gray-400 text-sm">{stat.label}</div>
-                      </div>
-                    ))}
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-7-7 7 7-7 7" />
+                      </svg>
+                    </div>
+                    <p className="text-white font-medium case-hover">View Case Study</p>
                   </div>
                 </div>
               </div>
-            </div>
-          ))
-        ) : (
-          <p className="text-gray-400 col-span-full text-center text-lg mt-8">
-            No projects available for this category.
-          </p>
-        )}
-      </div>
 
+              <div className="p-6 md:p-8">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-yellow-400 font-medium mb-4">{item.subtitle}</p>
+                <div className="mb-6">
+                  {item.technologies?.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="inline-block bg-white/10 text-gray-300 px-3 py-1 rounded-full text-xs mr-2 mb-2 border border-white/20"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-gray-300 mb-6 leading-relaxed">{item.description}</p>
+                <div className="grid grid-cols-2 gap-4">
+                  {item.metrics?.slice(0, 2).map((metric, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-2xl font-bold text-yellow-400 mb-1">{metric.value}</div>
+                      <div className="text-gray-400 text-sm">{metric.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </motion.div>
+
+      {/* The rest of your modal + footer remain unchanged */}
+      {/* ... */}
       {/* Modal */}
-      {activeProject && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6">
-    <div className="bg-black text-white w-full max-w-5xl rounded-2xl overflow-hidden relative shadow-xl">
-      {/* Close Button */}
+     {activeProject && (
+  <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm animate-fadeIn">
+    <div className="relative rounded-2xl bg-gray-900/90 border border-white/20 max-w-6xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-zoomIn">
       <button
-        className="absolute top-4 right-4 text-yellow-400 text-2xl font-bold hover:text-yellow-300 z-20"
         onClick={() => setActiveProject(null)}
+        className="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all"
       >
         ✕
       </button>
 
-      {/* Static Image */}
-      <div className="w-full h-80 relative">
-        <img
-          src={activeProject.image}
-          alt={activeProject.title}
-          className="w-full h-full object-cover"
-        />
-      </div>
+      {/* Top Image */}
+      <img
+        src={activeProject.image}
+        alt={activeProject.title}
+        className="w-full h-56 md:h-80 object-cover rounded-t-2xl"
+      />
 
-      {/* Scrollable Content Below Image */}
-      <div className="p-6 max-h-[70vh] overflow-y-auto flex flex-col gap-6">
-        {/* Key Metrics */}
-        <div>
-          <h3 className="text-2xl font-bold text-yellow-400 mb-4">Key Metrics</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { label: "Sales Growth", value: "250%" },
-              { label: "Market Expansion", value: "40%" },
-              { label: "New Customers", value: "5000+" },
-              { label: "Product Categories", value: "200+" },
-            ].map((metric, idx) => (
-              <div key={idx} className="flex flex-col items-center bg-yellow-900/10 p-4 rounded-lg border border-yellow-400/30">
-                <div className="text-xl md:text-2xl font-bold text-yellow-400 mb-1">{metric.value}</div>
-                <div className="text-gray-300 text-center text-sm">{metric.label}</div>
+      <div className="p-6 md:p-8">
+        <h2 className="text-3xl font-bold text-yellow-400 mb-2">{activeProject.title}</h2>
+        <p className="text-gray-300 mb-8">{activeProject.subtitle}</p>
+
+        {/* Two Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* LEFT — Text */}
+          <div className="md:col-span-2 space-y-6">
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-2">🎯 Challenge</h3>
+              <p className="text-gray-300">{activeProject.challenge}</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-2">💡 Our Approach</h3>
+              <p className="text-gray-300">{activeProject.approach}</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-2">🏆 Results Achieved</h3>
+              <p className="text-yellow-400 font-semibold">{activeProject.results}</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-3">🧰 Technologies & Services</h3>
+              <div className="flex flex-wrap gap-2">
+                {activeProject?.technologies?.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 bg-white/10 border border-white/20 text-gray-300 rounded-full text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <blockquote className="border-t border-white/10 pt-6 italic text-gray-300">
+              "{activeProject.testimonial}"
+              <br />
+              <span className="text-yellow-400 font-semibold">— {activeProject.client}</span>
+            </blockquote>
+          </div>
+
+          {/* RIGHT — Key Metrics */}
+          <div className="md:col-span-1 space-y-4">
+            <h3 className="text-xl font-semibold text-white mb-3">📊 Key Metrics</h3>
+            {activeProject?.metrics?.map((m, idx) => (
+              <div key={idx} className="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
+                <div className="text-2xl font-bold text-yellow-400">{m.value}</div>
+                <p className="text-gray-300 text-sm">{m.label}</p>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Main Info */}
-        <h2 className="text-3xl font-bold mb-2 text-yellow-400">{activeProject.title}</h2>
-        <p className="text-lg mb-4">{activeProject.subtitle}</p>
-        <p className="mb-4">{activeProject.description}</p>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {activeProject.tags.map((tag, idx) => (
-            <span
-              key={idx}
-              className="px-3 py-1 text-xs rounded-full border border-yellow-400 text-yellow-400"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          {activeProject.stats.map((stat, idx) => (
-            <div key={idx} className="text-center">
-              <div className="text-2xl font-bold text-yellow-400 mb-1">{stat.value}</div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Additional Sections */}
-        {activeProject.challenge && (
-          <div className="mb-4">
-            <h3 className="text-xl font-semibold text-yellow-400 mb-1">Challenge</h3>
-            <p className="text-gray-300">{activeProject.challenge}</p>
-          </div>
-        )}
-        {activeProject.approach && (
-          <div className="mb-4">
-            <h3 className="text-xl font-semibold text-yellow-400 mb-1">Our Approach</h3>
-            <p className="text-gray-300">{activeProject.approach}</p>
-          </div>
-        )}
-        {activeProject.results && (
-          <div className="mb-4">
-            <h3 className="text-xl font-semibold text-yellow-400 mb-1">Results Achieved</h3>
-            <p className="text-gray-300">{activeProject.results}</p>
-          </div>
-        )}
-        {activeProject.technologies && (
-          <div className="mb-4">
-            <h3 className="text-xl font-semibold text-yellow-400 mb-1">Technologies & Services</h3>
-            <div className="flex flex-wrap gap-2">
-              {activeProject.technologies.map((tech, idx) => (
-                <span
-                  key={idx}
-                  className="px-3 py-1 text-xs rounded-full border border-yellow-400 text-yellow-400"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-        {activeProject.testimonial && (
-          <div className="mt-4 border-t border-gray-700 pt-4 italic text-gray-300">
-            "{activeProject.testimonial}"
-          </div>
-        )}
       </div>
     </div>
+    <style jsx>{`
+            @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+            @keyframes zoomIn {
+              from { opacity: 0; transform: scale(0.95); }
+              to { opacity: 1; transform: scale(1); }
+            }
+            .animate-fadeIn { animation: fadeIn 0.3s ease-out; }
+            .animate-zoomIn { animation: zoomIn 0.4s ease-out; }
+            .case-hover {
+              position: relative;
+              display: inline-block;
+            }
+            .case-hover::after {
+              content: " →";
+              opacity: 0;
+              transform: translateX(-5px);
+              transition: all 0.3s ease;
+            }
+            .case-hover:hover::after {
+              opacity: 1;
+              transform: translateX(5px);
+            }
+          `}</style>
   </div>
 )}
 
 
-      {/* Footer */}
-    <footer className="relative bg-gradient-to-br from-black via-gray-950 to-slate-900 overflow-hidden w-full">
+
+    
+    
+     <footer className="relative overflow-hidden bg-gradient-to-br from-black via-gray-950 to-slate-900 mb-0 pb-0 w-full">
+
   <div className="absolute inset-0">
     <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"></div>
     <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-gradient-radial from-yellow-400/3 to-transparent rounded-full blur-3xl"></div>
@@ -476,7 +512,3 @@ export default function PortfolioSection() {
     </section>
   );
 }
-
-
-
-
